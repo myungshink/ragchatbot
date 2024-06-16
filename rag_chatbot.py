@@ -8,9 +8,8 @@ import os
 
 df = pd.read_csv("./completion/embedding.csv")
 df["embedding"] = df["embedding"].apply(ast.literal_eval)
-api_key = os.getent('OPENAI_API_KEY')
 
-client = openai.OpenAI(api_key=api_key)
+client = openai.OpenAI(api_key='sk-proj-EUPfxVARWBdvhaZFzHeeT3BlbkFJ3izJT6SzdmquaBDH3DFX')
 
 def get_embedding(text):
     response = client.embeddings.create(
